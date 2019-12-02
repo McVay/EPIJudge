@@ -2,8 +2,16 @@ from test_framework import generic_test
 
 
 def parity(x):
-    # TODO - you fill in here.
-    return 0
+
+    isOdd = 0
+    while x:
+        x = x & (x - 1) # drops the lowest set bit
+        isOdd ^= 1 # XOR with 1 to flip the bool each iteration
+
+    return isOdd 
+
+
+    
 
 
 if __name__ == '__main__':
